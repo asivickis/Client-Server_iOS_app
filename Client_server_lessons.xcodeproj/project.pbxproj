@@ -13,8 +13,13 @@
 		7471013D271CCCBC0023E8AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7471013C271CCCBC0023E8AD /* Assets.xcassets */; };
 		74710140271CCCBC0023E8AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7471013E271CCCBC0023E8AD /* LaunchScreen.storyboard */; };
 		74DFC54C271CD838003A34A9 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DFC54B271CD838003A34A9 /* Session.swift */; };
-		74DFC550271CDAC2003A34A9 /* Send_Session_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DFC54F271CDAC2003A34A9 /* Send_Session_ViewController.swift */; };
-		74DFC552271CE117003A34A9 /* View_Session_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DFC551271CE117003A34A9 /* View_Session_ViewController.swift */; };
+		74DFC55527264182003A34A9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 74DFC55427264182003A34A9 /* Alamofire */; };
+		74DFC557272642C8003A34A9 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DFC556272642C8003A34A9 /* DataController.swift */; };
+		74DFC55927264307003A34A9 /* AuthorizationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DFC55827264307003A34A9 /* AuthorizationController.swift */; };
+		74DFC55B27264F90003A34A9 /* GetFriendsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DFC55A27264F90003A34A9 /* GetFriendsAPI.swift */; };
+		74DFC55D27265680003A34A9 /* GetPhotoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DFC55C27265680003A34A9 /* GetPhotoAPI.swift */; };
+		74DFC55F272659FB003A34A9 /* GetGroupsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DFC55E272659FB003A34A9 /* GetGroupsAPI.swift */; };
+		74DFC56127265A75003A34A9 /* GetSearchGroupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DFC56027265A75003A34A9 /* GetSearchGroupAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +31,12 @@
 		7471013F271CCCBC0023E8AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74710141271CCCBC0023E8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74DFC54B271CD838003A34A9 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		74DFC54F271CDAC2003A34A9 /* Send_Session_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Send_Session_ViewController.swift; sourceTree = "<group>"; };
-		74DFC551271CE117003A34A9 /* View_Session_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View_Session_ViewController.swift; sourceTree = "<group>"; };
+		74DFC556272642C8003A34A9 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		74DFC55827264307003A34A9 /* AuthorizationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationController.swift; sourceTree = "<group>"; };
+		74DFC55A27264F90003A34A9 /* GetFriendsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFriendsAPI.swift; sourceTree = "<group>"; };
+		74DFC55C27265680003A34A9 /* GetPhotoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhotoAPI.swift; sourceTree = "<group>"; };
+		74DFC55E272659FB003A34A9 /* GetGroupsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGroupsAPI.swift; sourceTree = "<group>"; };
+		74DFC56027265A75003A34A9 /* GetSearchGroupAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSearchGroupAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74DFC55527264182003A34A9 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,8 +74,9 @@
 				74DFC54D271CD9B8003A34A9 /* Resources */,
 				74710139271CCCBA0023E8AD /* Main.storyboard */,
 				74DFC54B271CD838003A34A9 /* Session.swift */,
-				74DFC54F271CDAC2003A34A9 /* Send_Session_ViewController.swift */,
-				74DFC551271CE117003A34A9 /* View_Session_ViewController.swift */,
+				74DFC556272642C8003A34A9 /* DataController.swift */,
+				74DFC56227265BFD003A34A9 /* Services */,
+				74DFC55827264307003A34A9 /* AuthorizationController.swift */,
 			);
 			path = Client_server_lessons;
 			sourceTree = "<group>";
@@ -89,6 +100,17 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		74DFC56227265BFD003A34A9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				74DFC56027265A75003A34A9 /* GetSearchGroupAPI.swift */,
+				74DFC55E272659FB003A34A9 /* GetGroupsAPI.swift */,
+				74DFC55C27265680003A34A9 /* GetPhotoAPI.swift */,
+				74DFC55A27264F90003A34A9 /* GetFriendsAPI.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,6 +127,9 @@
 			dependencies = (
 			);
 			name = Client_server_lessons;
+			packageProductDependencies = (
+				74DFC55427264182003A34A9 /* Alamofire */,
+			);
 			productName = Client_server_lessons;
 			productReference = 74710130271CCCBA0023E8AD /* Client_server_lessons.app */;
 			productType = "com.apple.product-type.application";
@@ -133,6 +158,9 @@
 				Base,
 			);
 			mainGroup = 74710127271CCCBA0023E8AD;
+			packageReferences = (
+				74DFC55327264182003A34A9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 74710131271CCCBA0023E8AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -160,11 +188,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74DFC56127265A75003A34A9 /* GetSearchGroupAPI.swift in Sources */,
+				74DFC55D27265680003A34A9 /* GetPhotoAPI.swift in Sources */,
 				74710134271CCCBA0023E8AD /* AppDelegate.swift in Sources */,
-				74DFC552271CE117003A34A9 /* View_Session_ViewController.swift in Sources */,
+				74DFC55B27264F90003A34A9 /* GetFriendsAPI.swift in Sources */,
 				74710136271CCCBA0023E8AD /* SceneDelegate.swift in Sources */,
+				74DFC557272642C8003A34A9 /* DataController.swift in Sources */,
 				74DFC54C271CD838003A34A9 /* Session.swift in Sources */,
-				74DFC550271CDAC2003A34A9 /* Send_Session_ViewController.swift in Sources */,
+				74DFC55927264307003A34A9 /* AuthorizationController.swift in Sources */,
+				74DFC55F272659FB003A34A9 /* GetGroupsAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +416,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		74DFC55327264182003A34A9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		74DFC55427264182003A34A9 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74DFC55327264182003A34A9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 74710128271CCCBA0023E8AD /* Project object */;
 }
