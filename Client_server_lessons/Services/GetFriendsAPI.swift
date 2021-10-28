@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 struct Friends {
     
@@ -32,8 +33,23 @@ final class FriendsAPI {
         
         let url = basedURL + method
         AF.request(url, method: .get, parameters: param).responseJSON { response in
-            print(response.value)
+            
+            guard let data = response.data else { return }
+            debugPrint(response.data?.prettyJSON as Any)
+
+            do {
+                
+                let itemsData = try JSON(data)["response"]["items"].rawData()
+                let friends = try JSONDecoder().decode([Friend4].self, from: itemsData)
+
+                completion(friends)
+
+            } catch {
+                print(error)
+            }
         }
+        
+        
     }
     
 }

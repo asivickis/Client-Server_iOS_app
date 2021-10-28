@@ -29,9 +29,9 @@ final class PhotoAPI {
             "access token": token,
             "v": version
         ]
-        
+        print(token)
         let url = basedURL + method
-        
+        print(param)
         AF.request(url, method: .get, parameters: param).responseJSON { response in
             print(response.value)
         }

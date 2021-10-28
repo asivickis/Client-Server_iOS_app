@@ -26,7 +26,7 @@ class AuthViewController : UIViewController, WKNavigationDelegate {
         urlComponents.host = "oauth.vk.com"
         urlComponents.path = "/authorize"
         urlComponents.queryItems = [
-            URLQueryItem(name: "client_id", value: "7983874"),
+            URLQueryItem(name: "client_id", value: "7986311"),
             URLQueryItem(name: "display", value: "mobile"),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
             URLQueryItem(name: "scope", value: "262150"),
@@ -60,12 +60,12 @@ class AuthViewController : UIViewController, WKNavigationDelegate {
                 return dict
             }
         
-        guard let token = params["access_token"], let userID = params["user_id"] else { return }
+        guard let token = params["access_token"], let user_ID = params["user_id"] else { return }
         
         print(token)
         
         Session.shared.token = token
-        Session.shared.userID = userID
+        Session.shared.userID = user_ID
         
         performSegue(withIdentifier: "ShowDataSegue", sender: nil)
         
