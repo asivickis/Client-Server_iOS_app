@@ -6,19 +6,20 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Friend: Codable {
-     let id: Int
-     let lastName: String
-     let firstName: String
-
-     var fullName: String {
-         firstName + lastName
-     }
-
-     enum CodingKeys: String, CodingKey {
-         case id
-         case lastName = "last_name"
-         case firstName = "first_name"
-     }
- }
+class Friend: Object, Codable {
+    @objc dynamic var id: Int
+    @objc dynamic var lastName: String
+    @objc dynamic var firstName: String
+    
+    var fullName: String {
+        firstName + lastName
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case lastName = "last_name"
+        case firstName = "first_name"
+    }
+}
