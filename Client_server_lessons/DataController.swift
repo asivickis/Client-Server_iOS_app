@@ -18,22 +18,22 @@ class DataViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
+        
         friendService.getFriends { [weak self] friends in
             self?.friends = friends
             self?.tableView.reloadData()
-        }*/
+        }
+        /*
+        photoService.getPhotos { photos in
+            print("Get photos")
+        }
         
-         photoService.getPhotos { photos in
-         print("Get photos")
-         }
-         /*
-         groupService.getGroups { groups in
-         print("Get groups")
-         }
-         searchGroupService.getSGroups { sgroups in
-         print("get search groups")
-         } */
+        groupService.getGroups { groups in
+            print("Get groups")
+        }
+        searchGroupService.getSGroups { sgroups in
+            print("get search groups")
+        } */
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
