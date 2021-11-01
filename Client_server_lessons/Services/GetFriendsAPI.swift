@@ -9,47 +9,46 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-struct Friends {
-    
-}
 
 final class FriendsAPI {
     
-    let basedURL = "https://api.vk.com/method"
+    let baseURL = "https://api.vk.com/method"
     let token = Session.shared.token
     let userID = Session.shared.userID
     let version = "5.81"
     
-    func getFriends(completion: @escaping([Friends])->()) {
+    func getFriends(completion: @escaping([Friend])->()) {
+        
         let method = "/friends.get"
         
-        let param : Parameters = [
+        let parameters: Parameters = [
             "user_id": userID,
             "order": "name",
             "count": 10,
-            "access token": token,
+            "access_token": token,
             "v": version
         ]
         
-        let url = basedURL + method
-        AF.request(url, method: .get, parameters: param).responseJSON { response in
+        let url = baseURL + method
+        
+        AF.request(url, method: .get, parameters: parameters).responseJSON { response in
+            
+            print(response.value)
             
             guard let data = response.data else { return }
             debugPrint(response.data?.prettyJSON as Any)
-
+            
             do {
                 
                 let itemsData = try JSON(data)["response"]["items"].rawData()
-                let friends = try JSONDecoder().decode([Friend4].self, from: itemsData)
-
+                let friends = try JSONDecoder().decode([Friend].self, from: itemsData)
+                
                 completion(friends)
-
+                
             } catch {
                 print(error)
             }
         }
-        
-        
     }
     
 }

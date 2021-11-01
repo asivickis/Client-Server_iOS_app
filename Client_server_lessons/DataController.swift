@@ -10,23 +10,24 @@ import UIKit
 class DataViewController : UITableViewController {
     
     let friendService = FriendsAPI()
-    //    let photoService = PhotoAPI()
+    let photoService = PhotoAPI()
     //    let groupService = GroupsAPI()
     //    let searchGroupService = SearchGroupAPI()
     
-    var friends : [Friends] = []
+    var friends : [Friend] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         friendService.getFriends { [weak self] friends in
             self?.friends = friends
             self?.tableView.reloadData()
-        }
+        }*/
         
-        /*        photoService.getPhotos { photos in
+         photoService.getPhotos { photos in
          print("Get photos")
          }
+         /*
          groupService.getGroups { groups in
          print("Get groups")
          }
